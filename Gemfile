@@ -27,7 +27,7 @@ gem 'devise'
 gem "pundit"
 
 # gem 'figaro', github: 'laserlemon/figaro'
-gem 'apartment'
+gem 'apartment', git: 'git@github.com:influitive/apartment.git', branch: 'development'
 
 group :doc do
   gem 'sdoc', require: false
