@@ -82,7 +82,7 @@
 
     <div class="row">
         <div class="col-lg-12">
-            <form role="form" ng-show="currentUser.role != 'user'">
+            <form role="form" ng-show="currentUser.role != 'user'" ng-hide="currentUser == null">
                 <textarea class="form-control" ng-model="newAnswer" rows="5" />
                 <div>
                     <button type="button" class="btn btn-default" ng-click="addAnswer()">
