@@ -49,3 +49,7 @@ group :development do
   gem 'ruby-debug-ide', '~> 0.4.22'
   gem 'debase', '~> 0.0.9'
 end
+
+group :production do
+  gem 'rails_12factor'
+end
