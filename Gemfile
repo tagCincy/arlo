@@ -26,7 +26,7 @@ gem 'rails-assets-angular-bootstrap'
 gem 'devise'
 gem "pundit"
 
-gem 'figaro', github: 'laserlemon/figaro'
+# gem 'figaro', github: 'laserlemon/figaro'
 gem 'apartment'
 
 group :doc do
