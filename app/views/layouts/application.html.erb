@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app="arlo" ng-controller="PageCtrl">
+<head>
+  <title ng-bind="Page.title()">Loading...</title>
+  <%= stylesheet_link_tag "application", media: "all" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<top-bar></top-bar>
+
+<div ui-view=""></div>
+
+
+<%= javascript_include_tag "application" %>
+</body>
+</html>

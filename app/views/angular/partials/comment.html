@@ -1,0 +1,27 @@
+<ul class="list-group">
+    <li class="list-group-item" ng-repeat="comment in comments track by comment.id">
+        <p class="text-muted">
+            <small>{{comment.comment}}</small>
+        </p>
+        <p>
+            <small>{{comment.commenter}}</small>
+        </p>
+        <p>
+            <small>{{comment.submitted | date: 'shortDate'}}</small>
+        </p>
+    </li>
+    <li class="list-group-item text-right">
+        <a class="btn btn-sm btn-default" href ng-click="toggle()" ng-show="$parent.loggedIn && !toggled">Add Comment</a>
+        <form role="form" ng-show="toggled">
+            <textarea class="form-control" ng-model="newComment" rows="3" />
+            <div>
+                <button type="button" class="btn btn-xs btn-success" ng-click="addComment()">
+                    <i class="fa fa-check"></i>
+                </button>
+                <a class="btn btn-xs btn-danger" href ng-click="toggle()">
+                    <i class="fa fa-times"></i>
+                </a>
+            </div>
+        </form>
+    </li>
+</ul>

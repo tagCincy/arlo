@@ -1,0 +1,19 @@
+/*
+  *= require jquery.ui.all.css.erb
+*/
+
+@import "bootstrap";
+@import "font-awesome";
+
+
+.margin-bottom-10 {
+  margin-bottom: 10px;
+}
+
+.group-indicator {
+  background-color: green;
+}
+
+.public-indicator {
+  background-color: orange;
+}

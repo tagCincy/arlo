@@ -1,0 +1,98 @@
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading lead">
+                <span class="badge group-indicator" ng-show="question.group">G</span>
+                <span class="badge public-indicator" ng-show="question.public">P</span>
+                {{question.title}}
+                <span class="pull-right" ng-hide="question.public && !currentUser.role == 'admin'">
+                    <a href ng-click="makePublic()" ng-hide="question.public"
+                       class="btn btn-xs btn-warning">Make Public</a>
+                </span>
+            </div>
+            <div class="panel-body">
+
+
+                <div class="col-lg-12">
+                    {{question.content}}
+                </div>
+
+                <div class="padding-20">
+                    <div class="col-lg-8">
+                        <ul class="list-inline">
+                            <li ng-repeat=" tag in question.tags track by tag.id">
+                                <span class="label label-default">{{tag.name}}</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-lg-4 pull-right well well-sm">
+                        <div class="media">
+                            <a class="pull-left" href="#">
+                                <img class="media-object" src="http://placehold.it/50x50">
+                            </a>
+
+                            <div class="media-body">
+                                <h4 class="media-heading">Asked by {{question.author}}</h4>
+                                on {{question.submitted | date:'shortDate'}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <comments-panel cid-attrs="{{question.id}}" ctype-attrs="questions">
+        </comments-panel>
+    </div>
+    <hr>
+    <h4>Answers</h4>
+
+    <div ng-repeat="answer in question.answers track by answer.id">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="col-lg-12">
+                            {{answer.content}}
+                        </div>
+                        <div class="padding-20">
+                            <div class="col-lg-4 pull-right well well-sm">
+                                <div class="media">
+                                    <a class="pull-left" href="#">
+                                        <img class="media-object" src="http://placehold.it/50x50">
+                                    </a>
+
+                                    <div class="media-body">
+                                        <h4 class="media-heading">Answered by {{answer.technician}}</h4>
+                                        on {{answer.submitted | date:'shortDate'}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <comments-panel cid-attrs="{{answer.id}}" ctype-attrs="answers">
+            </comments-panel>
+        </div>
+        <hr>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12">
+            <form role="form" ng-show="currentUser.role != 'user'">
+                <textarea class="form-control" ng-model="newAnswer" rows="5" />
+                <div>
+                    <button type="button" class="btn btn-default" ng-click="addAnswer()">
+                        Add Answer
+                    </button>
+                    <a class="btn btn-danger" href ng-click="newAnswer = ''">
+                       Cancel
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

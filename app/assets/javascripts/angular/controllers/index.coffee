@@ -1,0 +1,1 @@
+angular.module('arlo.controllers', ['ui.bootstrap', 'arlo.services', 'arlo.directives'])

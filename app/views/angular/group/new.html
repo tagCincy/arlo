@@ -1,0 +1,24 @@
+<div class="col-lg-6 col-lg-offset-3">
+<h1 class="text-center">Create a New Group</h1>
+    <form role="form">
+        <div class="form-group">
+            <label for="group_name">Name</label>
+            <input type="text" class="form-control" id="group_name" name="group_name" ng-model="group.name"/>
+        </div>
+
+        <div class="form-group">
+            <label for="group_description">Description</label>
+            <textarea rows="5" class="form-control" id="group_description" name="group_description"
+                      ng-model="group.description"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="group_code">Code</label>
+            <input type="text" class="form-control" id="group_code" name="group_code" ng-model="group.code"/>
+        </div>
+        <p>
+            <button type="button" class="btn btn-primary" ng-click="createGroup()">Create Group</button>
+            <a class="btn btn-default" href="#/">Cancel</a>
+        </p>
+    </form>
+</div>
