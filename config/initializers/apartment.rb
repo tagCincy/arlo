@@ -17,7 +17,7 @@ Apartment.configure do |config|
   #
   # config.excluded_models = %w{Tenant}
   #
-  config.excluded_models = %w{User Account Group Question Answer Comment Tag Membership QuestionTag}
+  config.excluded_models = ['User', 'Account', 'Group', 'Question', 'Answer', 'Comment', 'Tag', 'Membership', 'QuestionTag']
 
   # use postgres schemas?
   config.use_schemas = true
